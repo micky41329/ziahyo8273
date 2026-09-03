@@ -166,15 +166,6 @@ function render(list,q){
    try{await navigator.clipboard.writeText(t);b.textContent="已複製 ✓";setTimeout(()=>b.textContent="複製客服文字",1200)}
    catch{prompt("請複製以下文字",t)}
  }));
- // 搜尋完成後自動觸發第一筆結果原本的「複製客服文字」按鈕。
- // 這樣沿用既有複製按鈕的邏輯，不改變原本客服文字內容。
- // iOS/Safari 若因剪貼簿安全政策拒絕程式觸發的複製，仍保留畫面上的「複製客服文字」按鈕供手動點擊。
- if(list.length){
-   setTimeout(()=>{
-     const b=out.querySelector('.copy');
-     if(b) b.click();
-   },120);
- }
 }
 
 const CUSTOMER_SITE="https://micky41329.github.io/ziahyo8273/";
