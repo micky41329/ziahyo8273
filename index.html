@@ -224,4 +224,21 @@ document.querySelectorAll(".chip,.topic").forEach(b=>b.addEventListener("click",
       document.getElementById("q").value=b.dataset.q;search();
     }));
 </script>
+
+<script>
+(function(){
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const incoming = params.get("q");
+    if (incoming) {
+      const input = document.getElementById("q");
+      if (input) {
+        input.value = incoming;
+        input.focus();
+      }
+    }
+  } catch(e) {}
+})();
+</script>
+
 </body></html>
