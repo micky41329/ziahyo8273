@@ -235,6 +235,7 @@ document.querySelectorAll(".chip,.topic").forEach(b=>b.addEventListener("click",
       if (input) {
         input.value = incoming;
         input.focus();
+        search();
       }
     }
   } catch(e) {}
